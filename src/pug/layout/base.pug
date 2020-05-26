@@ -1,0 +1,18 @@
+include config.pug
+doctype html
+
+html(lang=config.lang)
+	head
+		//- block meta for local page config
+		block meta
+		include head.pug
+		
+	body
+		block content
+
+			include top-menu.pug
+			
+			include hero.pug
+		//-mixin examples block
+		//- +svg('class', 'anchor', 'title', 'desc')
+		include scripts.pug
