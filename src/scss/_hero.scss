@@ -1,6 +1,6 @@
 .hero {
 	min-height: 100vh;
-	padding: 17px 0 0 0;
+	padding-top: 17px;
 	background-image:
 		linear-gradient(90deg, rgba(213, 32, 71, 0.8) 0%, rgba(238, 61, 27, 0.8) 100%),
 		url('../img/hero.jpg');
@@ -8,34 +8,37 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: $bg-color;
-}
-.hero-text {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	min-height: calc(100vh - #{$top-bar-min-height});
-	
-	&__title {
-		margin-bottom: 40px;
-		font-size: 7.2rem;
-		font-weight: bold;
-		line-height: 8.6rem;
-	}
-	&__subtitle {
-		max-width: 540px;
-		margin-bottom: 40px;
-		font-weight: 600;
-		font-size: 2.4rem;
-		line-height: 3.4rem;
-	}
-	&__btn {
-		border-color: $bg-color;
 
-		&:hover {
+	.hero-text {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		min-height: calc(100vh - #{$top-bar-min-height});
+		
+		&__title {
+			margin-bottom: 40px;
+			font-size: 7.2rem;
+			font-weight: bold;
+			line-height: 8.6rem;
+		}
+		&__subtitle {
+			max-width: 540px;
+			margin-bottom: 40px;
+			font-weight: 600;
+			font-size: 2.4rem;
+			line-height: 3.4rem;
+		}
+		&__btn {
 			background-color: $bg-color;
 			color: $pink;
+			border-color: $bg-color;
+	
+			&:hover {
+				background-color: transparent;
+				color: $bg-color;
+			}
 		}
 	}
 }

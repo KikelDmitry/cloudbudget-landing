@@ -1,0 +1,55 @@
+.videosec {
+	display: flex;
+	align-items: center;
+	min-height: 500px;
+	padding: 94px 0;
+
+	&__col {
+		width: 50%;
+	}
+	.video-text {
+		padding-right: 50px;
+
+		&__title {
+			margin-bottom: 2.4rem;
+			font-size: 3.6rem;
+			font-weight: 600;
+			line-height: 4.3rem;
+		}
+		&__desc {
+			margin-bottom: 2.4rem;
+			line-height: 2rem;
+			font-weight: normal;
+		}
+		&__btn {
+			color: #ed4c5c;
+			line-height: 2rem;
+		}
+	}
+	.video-cont {
+		position: relative;
+
+		&__img {
+		}
+		&__btn {
+			$bgc: #ed4c5c;
+			position: absolute;
+			top: calc(50% - 33px);
+			left: -33px;
+			width: 66px;
+			height: 66px;
+			background-color: $bgc;
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath d='M11.75 8l-11.25 7.875v-15.75l11.25 7.875z' fill='%23fff'/%3E%3C/svg%3E");
+			background-position: 53% center;
+			background-repeat: no-repeat;
+			border-radius: 50%;
+			transition: all 0.3s cubic-bezier(.75,-0.56,.85,.5);
+
+			&:hover {
+				background-color: lighten($bgc, 10%);
+				transform: scale(1.2);
+				box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+}

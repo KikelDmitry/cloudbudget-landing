@@ -79,7 +79,7 @@ gulp.task('css', function () {
 let scriptsList = [
 	 `${src}js/svg4everybody.js`,
 	 `${src}js/modal.js`,
-	 `${src}js/main.js`
+	 `${src}js/main.js`,
 ]
 
 gulp.task('scripts', function () {

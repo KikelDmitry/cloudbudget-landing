@@ -1,3 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-	svg4everybody();
+	if (!!document.documentMode) {
+		svg4everybody();
+	}
 })
