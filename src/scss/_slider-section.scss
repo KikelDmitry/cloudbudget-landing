@@ -1,0 +1,44 @@
+.slider-section {
+	background-color: $pink;
+
+	.slidersec {
+		display: flex;
+		align-items: center;
+		min-height: 500px;
+		padding: 94px 0;
+		color: $bg-color;
+	
+		&__col {
+			width: 50%;
+		}
+		.slider-text {
+			&__title {
+				margin-bottom: 2.4rem;
+			}
+			&__desc {
+				margin-bottom: 2.4rem;
+				line-height: 2rem;
+				font-weight: normal;
+			}
+			&__links {
+				display: flex;
+
+				a {
+					margin-right: 23px;
+					transition: all .3s;
+
+					&:hover {
+						transform: scale(1.4);
+					}
+
+					svg {
+						display: block;
+						width: 32px;
+						height: 32px;
+						fill: $bg-color;
+					}
+				}
+			}
+		}
+	}
+}

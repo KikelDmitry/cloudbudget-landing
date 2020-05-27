@@ -1,6 +1,15 @@
 .inner {
 	max-width: 1110px;
 	margin: 0 auto;
+
+	@include df(1120) {
+		padding: 0 10px;
+	}
+}
+.section-title {
+	font-size: 3.6rem;
+	font-weight: 600;
+	line-height: 4.3rem;
 }
 .rnd-btn {
 	padding: 12px 28px;

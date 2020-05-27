@@ -14,8 +14,6 @@ body {
 	font-family: "Lato", "Helvetica", "Arial", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.02em;
-
-	min-height: 300vh;
 }
 
 @import "_elements.scss";
@@ -24,7 +22,18 @@ body {
 
 @import "_hero.scss";
 
-@import "video-section.scss";
+@import "_video-section.scss";
+
+@import "_features.scss";
+
+@import "_technology.scss";
+
+@import "_slider-section.scss";
 
 @import "_modal.scss";
+
+
+
+
+
 // @import "_debug.scss";

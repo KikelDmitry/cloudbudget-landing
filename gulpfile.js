@@ -77,7 +77,7 @@ gulp.task('css', function () {
 
 // js files list in order
 let scriptsList = [
-	 `${src}js/svg4everybody.js`,
+	//  `${src}js/svg4everybody.js`,
 	 `${src}js/modal.js`,
 	 `${src}js/main.js`,
 ]
