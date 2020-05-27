@@ -9,7 +9,7 @@ body {
 	margin: 0;
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+	line-height: 1;
 }
 a {
 	text-decoration: none;
@@ -54,6 +54,7 @@ button {
 	border: none;
 	color: inherit;
 	user-select: none;
+	text-transform: inherit;
 	transition: box-shadow 0.3s;
 
 	&:hover {

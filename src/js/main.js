@@ -1,1 +1,3 @@
-console.log('main.js');
+window.addEventListener('DOMContentLoaded', function () {
+	svg4everybody();
+})

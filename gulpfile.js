@@ -18,6 +18,7 @@ let gulp = require('gulp'),
 	csso = require('gulp-csso'),
 
 	//JS
+	babel = require('gulp-babel'),
 	minify = require('gulp-minify'),
 
 
@@ -74,14 +75,19 @@ gulp.task('css', function () {
 
 //js
 
-//js files list in order
-// let scriptsList = [
-//	 `${src}js/main.js`,
-//	 `${src}js/add.js`
-// ]
+// js files list in order
+let scriptsList = [
+	 `${src}js/svg4everybody.js`,
+	 `${src}js/modal.js`,
+	 `${src}js/main.js`
+]
 
 gulp.task('scripts', function () {
-	return gulp.src(`${src}js/*.js`)
+	return gulp.src(scriptsList)
+		.pipe(sourcemaps.write('.'))
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
 		.pipe(concat('bundle.js'))
 		.pipe(minify({
 			ext: {

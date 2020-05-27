@@ -8,11 +8,9 @@ html(lang=config.lang)
 		include head.pug
 		
 	body
-		block content
-
-			include top-menu.pug
-			
+		block content			
 			include hero.pug
 		//-mixin examples block
 		//- +svg('class', 'anchor', 'title', 'desc')
+		include modal.pug
 		include scripts.pug

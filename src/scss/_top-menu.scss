@@ -1,0 +1,66 @@
+$top-bar-min-height: 100px;
+.top-bar {
+	.inner {
+		min-height: $top-bar-min-height;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-transform: uppercase;
+	}
+}
+.top-logo {
+	display: flex;
+	align-items: center;
+
+	&__icon {
+		svg {
+			max-width: 29px;
+			max-height: 29px;
+			fill: $bg-color;
+		}
+	}
+	&__title {
+		padding-left: 7px;
+		font-weight: bold;
+		font-size: 1.8rem;
+	}
+}
+.top-menu {
+	&__list {
+		display: flex;
+	}
+	&__item {
+		padding: 0 11px;
+	}
+	&__link {
+		font-weight: normal;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 1px;
+			background-color: $bg-color;
+			transform-origin: left center;
+			transform: scaleX(0);
+			transition: all .3s;
+		}
+
+		&:hover {
+			text-shadow: 0 0 1px currentColor;
+
+			&::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
+.top-login {
+	&__btn {
+		border-color: $bg-color;
+
+		&:hover {
+			background-color: $bg-color;
+			color: $pink;
+		}
+	}
+}
