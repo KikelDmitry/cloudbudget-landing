@@ -1,0 +1,66 @@
+.contactsec {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 500px;
+	padding: 94px 0;
+	margin-bottom: 45px;
+
+	&__col {
+		flex: 1 1 auto;
+		max-width: 50%;
+	}
+	.contact-text {
+		max-width: 445px;
+
+		&__title {
+			margin-bottom: 2.4rem;
+		}
+		&__desc {
+			margin-bottom: 2.4rem;
+			line-height: 2rem;
+			font-weight: normal;
+		}
+	}
+	.contact-cont {
+		.cont-form {
+			&__row {
+				display: flex;
+				margin-bottom: 24px;
+			}
+			&__label {
+				flex: 1 1 auto;
+				max-width: 100%;
+
+				&:first-child:not(:last-child) {
+					margin-right: 15px;
+				}
+				&:last-child:not(:first-child) {
+					margin-left: 15px;
+				}
+			}
+
+			&__input {
+				display: block;
+				width: 100%;
+				padding: 20px 30px;
+				border: 1px solid #333333;
+				border-radius: 6px;
+				font-size: 1.6rem;
+				line-height: 1.9rem;
+			}
+			&__select {
+				option {
+					padding: 20px 0;
+				}
+			}
+			&__btn {
+				padding: 17px 34px;
+				background: $pink;
+				color: $bg-color;
+				font-size: 1.4rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

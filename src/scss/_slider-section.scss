@@ -3,15 +3,18 @@
 
 	.slidersec {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		min-height: 500px;
 		padding: 94px 0;
 		color: $bg-color;
 	
 		&__col {
-			width: 50%;
+			max-width: 50%;
 		}
 		.slider-text {
+			max-width: 445px;
+
 			&__title {
 				margin-bottom: 2.4rem;
 			}

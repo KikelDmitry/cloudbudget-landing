@@ -1,0 +1,26 @@
+section.contact-section
+	.inner
+		.contactsec
+			.contactsec__col.contact-text
+				h2.contact-text__title.section-title Contact
+				.contact-text__desc Questions or concerns? Just fill out the form below and our support team will get back to you within 24 hours
+			.contactsec__col.contact-cont
+				form.cont-form
+					.cont-form__row
+						label.cont-form__label
+							input.cont-form__input(type="text" name="firstname" placeholder="First Name")
+						label.cont-form__label
+							input.cont-form__input(type="text" name="lastname" placeholder="Last Name")
+					.cont-form__row
+						label.cont-form__label
+							input.cont-form__input(type="tel" name="pnone" placeholder="Phone number")
+					.cont-form__row
+						label.cont-form__label
+							select.cont-form__select.cont-form__input(name="select")
+								option(value="" disabled selected) Select service
+								option(value="service1") Service 1
+								option(value="service2") Service 2
+								option(value="service3") Service 3
+								option(value="service4") Service 4
+					.cont-form__row
+						button.cont-form__btn.rnd-btn(type="submit") Submit now
