@@ -9,9 +9,19 @@
 	&__col {
 		flex: 1 1 auto;
 		max-width: 50%;
+
+		@include df(720) {
+			max-width: 100%;
+		}
 	}
 	.contact-text {
 		max-width: 445px;
+		padding-right: 30px;
+
+		@include df(720) {
+			max-width: 100%;
+			padding-right: 0;
+		}
 
 		&__title {
 			margin-bottom: 2.4rem;
@@ -27,6 +37,14 @@
 			&__row {
 				display: flex;
 				margin-bottom: 24px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				@include df(480) {
+					flex-direction: column;
+				}
 			}
 			&__label {
 				flex: 1 1 auto;
@@ -34,9 +52,26 @@
 
 				&:first-child:not(:last-child) {
 					margin-right: 15px;
+
+					@include df(960) {
+						margin-right: 8px;
+					}
+					
+					@include df(480) {
+						margin-bottom: 24px;
+						margin-right: 0;
+					}
 				}
 				&:last-child:not(:first-child) {
 					margin-left: 15px;
+
+					@include df(960) {
+						margin-left: 8px;
+					}
+
+					@include df(480) {
+						margin-left: 0;
+					}
 				}
 			}
 
@@ -44,10 +79,15 @@
 				display: block;
 				width: 100%;
 				padding: 20px 30px;
+				background-color: $bg-color;
 				border: 1px solid #333333;
 				border-radius: 6px;
 				font-size: 1.6rem;
 				line-height: 1.9rem;
+
+				@include df(1024) {
+					padding: 14px 20px;
+				}
 			}
 			&__select {
 				option {
@@ -62,5 +102,11 @@
 				text-transform: uppercase;
 			}
 		}
+	}
+	@include df(720) {
+		flex-wrap: wrap;
+	}
+	@include df(540) {
+		padding: 44px 0;
 	}
 }

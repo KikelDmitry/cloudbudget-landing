@@ -1,20 +1,28 @@
 header.top-bar
 	.inner
-		.top-bar__logo.top-logo
-			.top-logo__icon
-				+svg('', 'icons--cloud', config.title + ' logo', 'cloud icon')
-			.top-logo__title=config.title
-		nav.top-bar__menu.top-menu
-			ul.top-menu__list
-				li.top-menu__item
-					a.top-menu__link(href="#") Overview
-				li.top-menu__item
-					a.top-menu__link(href="#") Features
-				li.top-menu__item
-					a.top-menu__link(href="#") Technology
-				li.top-menu__item
-					a.top-menu__link(href="#") Contact
-				li.top-menu__item
-					button.top-menu__link(type="button" data-modal="signup-form") Sign up
-		.top-bar__login.top-login
-			button.top-login__btn.rnd-btn(type="button" data-modal="login-form") Login
+		.top-bar-sec
+			.top-bar__logo.top-logo
+				.top-logo__icon
+					+svg('', 'icons--cloud', config.title + ' logo', 'cloud icon')
+				.top-logo__title=config.title
+			nav.top-bar__menu.top-menu
+				ul.top-menu__list
+					li.top-menu__item
+						a.top-menu__link(href="#") Overview
+					li.top-menu__item
+						a.top-menu__link(href="#") Features
+					li.top-menu__item
+						a.top-menu__link(href="#") Technology
+					li.top-menu__item
+						a.top-menu__link(href="#") Contact
+					li.top-menu__item
+						button.top-menu__link(type="button" data-modal="signup-form") Sign up
+			.top-bar__login.top-login
+				button.top-login__btn.rnd-btn(type="button" data-modal="login-form") Login
+			.top-bar__burger.top-burger
+				button.top-burger__btn(type="button")
+					svg.top-burger__icon(width="44" height="44" viewBox="0 0 44 44")
+						rect.top-burger__line(width="22" height="2" x="11" y="15" rx="1")
+						rect.top-burger__line(width="22" height="2" x="11" y="21" rx="1")
+						rect.top-burger__line(width="22" height="2" x="11" y="27" rx="1")
+						desc burger button icon

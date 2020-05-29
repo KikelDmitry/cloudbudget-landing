@@ -8,7 +8,9 @@ html(lang=config.lang)
 		include head.pug
 		
 	body
-		block content			
+		block content
+			include top-bar.pug
+
 			include hero.pug
 
 			include video-section.pug

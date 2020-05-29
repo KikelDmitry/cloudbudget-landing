@@ -5,6 +5,10 @@
 	&__title {
 		padding: 63px 0;
 		text-align: center;
+
+		@include df(768) {
+			padding: 33px 0;
+		}
 	}
 	.feat-cont {
 		display: flex;
@@ -21,6 +25,10 @@
 			&:last-child {
 				margin-right: 0;
 			}
+
+			@include df(768) {
+				margin: 0 0 20px;
+			}
 		}
 		.feat-item {
 			position: relative;
@@ -28,6 +36,10 @@
 			&__img {
 				border-radius: 8px;
 				overflow: hidden;
+
+				@include df(768) {
+					border-radius: 8px 8px 0 0;
+				}
 			}
 			&__text {
 				position: absolute;
@@ -45,8 +57,14 @@
 				border-radius: 8px;
 				box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 
+				@include df(960) {
+					padding: 25px;
+				}
 				@include df(768) {
-					top: 50%;
+					position: static;
+					padding: 15px;
+					background-color: transparentize($bg-color, 0.1);
+					border-radius: 0 0 8px 8px;
 				}
 			}
 			&__title {
@@ -54,17 +72,34 @@
 				font-size: 1.8rem;
 				font-weight: bold;
 				line-height: 2.2rem;
+
+				@include df(540) {
+					font-size: 2.1rem;
+				}
 			}
 			&__subtitle {
 				margin-bottom: 20px;
 				font-size: 1.2rem;
 				line-height: 1.8rem;
+
+				@include df(540) {
+					font-size: 1.4rem;
+				}
 			}
 			&__btn {
 				font-size: 1.2rem;
 				line-height: 1.8rem;
 				color: $pink;
+
+				@include df(540) {
+					font-weight: bold;
+					font-size: 1.6rem;
+				}
 			}
+		}
+		@include df(768) {
+			align-items: center;
+			flex-direction: column;
 		}
 	}
 }

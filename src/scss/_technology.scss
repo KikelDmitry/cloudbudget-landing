@@ -4,11 +4,19 @@
 	&__title {
 		padding: 63px 0;
 		text-align: center;
+
+		@include df(768) {
+			padding: 33px 0;
+		}
 	}
 	&__list {
 		display: flex;
 		justify-content: center;
 		counter-reset: tech-list;
+
+		@include df(880) {
+			flex-flow: row wrap;
+		}
 	}
 	&__item {
 		position: relative;
@@ -19,10 +27,19 @@
 
 		&:first-child {
 			margin-left: 0;
+
+			@include df(880) {
+				margin: 0 15px;
+			}
 		}
 		&:last-child {
 			margin-right: 0;
+
+			@include df(880) {
+				margin: 0 15px;
+			}
 		}
+		
 	}
 	.tech-item {
 		text-align: center;
@@ -60,6 +77,9 @@
 		&__desc {
 			font-size: 1.2rem;
 			line-height: 1.4rem;
+		}
+		@include df(880) {
+			padding: 55px 0 0;
 		}
 	}
 }
