@@ -8,17 +8,32 @@
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 140px;
+			
+			@include df(640) {
+				flex-direction: column;
+				margin-bottom: 40px;
+			}
 		}
 		&__copy {
 			color: #101010;
 			font-size: 1.2rem;
 			line-height: 1.4rem;
+
+			@include df(640) {
+				text-align: center;
+			}
 		}
 
 		&__col {
 			flex: 1 1 auto;
 			max-width: 260px;
 			padding-right: 30px;
+
+			@include df(640) {
+				padding-right: 0;
+				margin-bottom: 20px;
+				max-width: 100%;
+			}
 		}
 		.foot-col {
 			font-size: 1.2rem;
@@ -30,16 +45,35 @@
 				font-size: 1.8rem;
 				font-weight: bold;
 				line-height: 2.2rem;
+
+				@include df(640) {
+					margin-bottom: 0;
+				}
 			}
+			@include df(640) {
+				text-align: center;
+				font-size: 1.6rem;
+			}
+		}
+		.foote-address {
+
 		}
 		.foot-menu {
 			&__list {
-				
+				@include df(640) {
+					display: flex;
+					justify-content: center;
+					flex-flow: row wrap;
+				}
 			}
 			&__item {
-
+				@include df(640) {
+					padding: .3em .4em .7em;
+				}
 			}
 			&__link {
+				text-align: left;
+
 				&:hover {
 					text-decoration: underline;
 				}
@@ -53,6 +87,9 @@
 				&:last-child {
 					margin: 20px 0 0;
 				}
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 			.foot-social {
 				display: flex;
@@ -62,17 +99,35 @@
 					height: 14px;
 					margin-right: 12px;
 
+					@include df(1024) {
+						width: 24px;
+						height: 24px;
+						padding: 10px;
+						margin-right: 0;
+						box-sizing: content-box;
+					}
+					
 					svg {
 						width: inherit;
 						height: inherit;
 					}
 				}
-			}
-			.foot-pay {
-				&__item {
-					display: inline-block;
+				@include df(640) {
+					justify-content: center;
 				}
 			}
+		}
+		.foot-pay {
+			&__item {
+				display: flex;
+
+				@include df(640) {
+					justify-content: center;
+				}
+			}
+		}
+		@include df(640) {
+			padding: 44px 0 20px;
 		}
 	}
 }

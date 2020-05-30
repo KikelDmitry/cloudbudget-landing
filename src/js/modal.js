@@ -1,74 +1,66 @@
 //MODAL WINDOWS
 const mLayer = document.querySelector('.modal__layer');
 if (mLayer) {
+
 	let mWindow = mLayer.querySelector('.modal__window'),
-		mItem = mWindow.querySelector('.modal__item'),
-		mBtn = document.querySelectorAll('[data-modal]');
-	window.addEventListener('DOMContentLoaded', function() {
-		mLayer.removeAttribute('style');
-	})
-	// window.onload = function () {
-	// }
-	mBtn.forEach(function (btn) {
-		btn.addEventListener('click', function () {
-			let btnData = this.dataset.modal,
-				currWindow = mWindow.querySelector('.modal__item#' + btnData);
-			modalOpen(currWindow);
-		});
-		function modalOpen(currWindow) {
-			if (currWindow) {
-				//open modal item
-				document.documentElement.classList.add('modal-open');
-				document.body.classList.add('modal-open');
-				mLayer.classList.add('is-visible');
-				currWindow.classList.add('is-active');
-				//if page has scroll
-				if (document.documentElement.clientHeight < document.body.clientHeight) {
-					document.body.classList.add('modal-open--w-scroll');
-				}
-				//create close button
-				let closeBtn = document.createElement('button');
-				closeBtn.classList.add('modal__close-btn');
-				closeBtn.setAttribute('type', 'button');
-				closeBtn.innerHTML = '<span class="visually-hidden">Закрыть окно</span>';
-				currWindow.append(closeBtn);
-				//if this modal form - focus to first input element
-				if (currWindow.classList.contains('modal__form')) {
-					setTimeout(function () {
-						currWindow.querySelector('.text__input').focus();
-					}, 400)
-				}
-				//close by close button
-				closeBtn.addEventListener('click', closeByBtn);
+		mItems = mWindow.querySelectorAll('.modal__item');
 
-				//close by esc
-				document.addEventListener('keydown', closeEsc);
+	function sliderInit() {
+		mLayer.style = false;
+		//create and append close button to each modal window
+		mItems.forEach(function (modalItem) {
+			let closeBtn = document.createElement('button');
+			closeBtn.classList.add('modal__close-btn');
+			closeBtn.type = 'button';
+			closeBtn.ariaLabel = 'Close';
+			modalItem.append(closeBtn);
+		})
+	}
+	function modalOpen(id) {
+		document.documentElement.classList.add('modal-open');
+		document.body.classList.add('modal-open');
+		mLayer.classList.add('is-visible');
+		//if page has scroll
+		if (document.documentElement.clientHeight < document.body.clientHeight) {
+			document.body.classList.add('modal-open--w-scroll');
+		}
 
-				//close by oftargetclick
-				mWindow.addEventListener('click', ofTargetClick);
-			}
-		};
-	});
-	let closeByBtn = function () {
-		modalClose();
-	},
-		closeEsc = function (e) {
-			if (e.keyCode === 27) {
-				modalClose();
-			}
-		},
-		ofTargetClick = function (e) {
-			if (e.target == this) {
-				modalClose();
-			}
-		};
+		let currWin = mWindow.querySelector('#' + id);
+		currWin.classList.add('is-active');
+
+	}
 	function modalClose() {
 		document.documentElement.classList.remove('modal-open');
 		document.body.classList.remove('modal-open', 'modal-open--w-scroll');
 		mLayer.classList.remove('is-visible');
-		mItem.querySelector('.modal__close-btn').remove();
-		mItem.classList.remove('is-active');
-		document.removeEventListener('keydown', closeEsc);
-		mWindow.removeEventListener('click', ofTargetClick);
-	};
+		mItems.forEach(function (item) {
+			item.classList.remove('is-active');
+		})
+	}
+	window.addEventListener('DOMContentLoaded', function () {
+		sliderInit();
+	})
+	window.addEventListener('click', function (e) {
+		if (!e.target.hasAttribute('data-modal')) {
+			return;
+		} else {
+			if (e.target.dataset.modal != '') {
+				modalClose(); //close all firstly
+				let dataModal = e.target.dataset.modal;
+				console.log(dataModal);
+
+				modalOpen(dataModal);
+			}
+		}
+	})
+	document.addEventListener('keydown', function (e) {
+		if (e.keyCode === 27) {
+			modalClose();
+		}
+	})
+	mWindow.addEventListener('click', function (e) {
+		if (e.target == this || e.target.classList.contains('modal__close-btn')) {
+			modalClose();
+		}
+	})
 }

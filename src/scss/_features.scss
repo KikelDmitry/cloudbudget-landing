@@ -1,6 +1,9 @@
 .features {
-	min-height: 660px;
 	background: #fafafa;
+	
+	.featuressec {
+		min-height: 660px;
+	}
 
 	&__title {
 		padding: 63px 0;

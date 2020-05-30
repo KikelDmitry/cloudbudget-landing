@@ -15,13 +15,6 @@ function mobileMenu() {
 		this.classList.remove('is-active');
 	}
 }
-window.addEventListener('click', function(e) {
-	if(e.target.tagName != 'BUTTON') {
-		return;		
-	} else {
-		console.log('button click!')
-	}
-})
 
 //fake slider
 let slider = document.querySelector('.slider-cont');

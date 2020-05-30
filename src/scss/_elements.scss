@@ -17,3 +17,6 @@
 	border: 1px solid currentColor;
 	transition: all .3s;
 }
+[href^="tel"] {
+	white-space: nowrap;
+}
