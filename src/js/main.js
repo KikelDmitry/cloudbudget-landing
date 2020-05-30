@@ -23,3 +23,13 @@ function fakeSlider() {
 	slider.append(slide);
 }
 slider.onclick = fakeSlider;
+
+//block forms
+let forms = document.querySelectorAll('form');
+forms.forEach(function(form) {
+	form.onsubmit = function(e) {
+		e.preventDefault();
+		console.log('denied');
+		
+	}
+})

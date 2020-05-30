@@ -44,11 +44,9 @@ if (mLayer) {
 		if (!e.target.hasAttribute('data-modal')) {
 			return;
 		} else {
-			if (e.target.dataset.modal != '') {
+			if (!!e.target.dataset.modal) {
 				modalClose(); //close all firstly
 				let dataModal = e.target.dataset.modal;
-				console.log(dataModal);
-
 				modalOpen(dataModal);
 			}
 		}
