@@ -16,6 +16,11 @@
 	border-radius: 6px;
 	border: 1px solid currentColor;
 	transition: all .3s;
+
+	&:focus {
+		outline: 0;
+		border-color: black;
+	}
 }
 [href^="tel"] {
 	white-space: nowrap;

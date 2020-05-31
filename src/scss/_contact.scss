@@ -49,6 +49,7 @@
 			&__label {
 				flex: 1 1 auto;
 				max-width: 100%;
+				position: relative;
 
 				&:first-child:not(:last-child) {
 					margin-right: 15px;
@@ -88,6 +89,7 @@
 				@include df(1024) {
 					padding: 14px 20px;
 				}
+
 			}
 			&__select {
 				option {

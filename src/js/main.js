@@ -1,20 +1,45 @@
+//listeners list :0
 window.addEventListener('DOMContentLoaded', function () {
 	if (!!document.documentMode) {
 		svg4everybody();
 	}
 })
+document.addEventListener('click', function(event) {
+	let target = event.target;
+	//just example
+	if (target.closest('.top-burger__btn')) {
+		mobMenu();
+		return;
+	} else if (target.matches('.top-menu.is-active a.top-menu__link')) {
+		closeMenu();
+		return;
+	}
+	
+})
 
-let burgerBtn = document.querySelector('.top-burger__btn');
-
-burgerBtn.addEventListener('click', mobileMenu)
-
-function mobileMenu() {
-	if (!this.classList.contains('is-active')) {
-		this.classList.add('is-active');
+//mobile menu
+let burger = document.querySelector('.top-burger__btn'),
+	menu = document.querySelector('.top-menu');
+function mobMenu() {
+	if(!burger.classList.contains('is-active')) {
+		document.body.classList.add('modal-open')
+		document.documentElement.classList.add('modal-open')
+		burger.classList.add('is-active')
+		menu.classList.add('is-active')
 	} else {
-		this.classList.remove('is-active');
+		document.body.classList.remove('modal-open')
+		document.documentElement.classList.remove('modal-open')
+		burger.classList.remove('is-active')
+		menu.classList.remove('is-active')
 	}
 }
+function closeMenu() {
+	document.body.classList.remove('modal-open')
+	document.documentElement.classList.remove('modal-open')
+	burger.classList.remove('is-active')
+	menu.classList.remove('is-active')
+}
+
 
 //fake slider
 let slider = document.querySelector('.slider-cont');
@@ -24,12 +49,13 @@ function fakeSlider() {
 }
 slider.onclick = fakeSlider;
 
-//block forms
+//blocking forms submit
 let forms = document.querySelectorAll('form');
-forms.forEach(function(form) {
-	form.onsubmit = function(e) {
+forms.forEach(function (form) {
+	form.onsubmit = function (e) {
 		e.preventDefault();
 		console.log('denied');
-		
+
 	}
 })
+

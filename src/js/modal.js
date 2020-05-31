@@ -24,9 +24,21 @@ if (mLayer) {
 		if (document.documentElement.clientHeight < document.body.clientHeight) {
 			document.body.classList.add('modal-open--w-scroll');
 		}
-
 		let currWin = mWindow.querySelector('#' + id);
 		currWin.classList.add('is-active');
+
+		//if this modal video
+		if (currWin.id == 'modal-video' && !currWin.querySelector('.modal-video__wrap')) {
+			let embed = document.createElement('iframe');
+			embed.classList.add('modal-video__embed');
+			embed.src = 'https://www.youtube.com/embed/bIZsnKGV8TE';
+			embed.allowFullscreen = true;
+			let embedWrap = document.createElement('div');
+			embedWrap.classList.add('modal-video__wrap');
+			currWin.append(embedWrap);
+			embedWrap.append(embed);
+			
+		}
 
 	}
 	function modalClose() {
