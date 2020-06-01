@@ -102,6 +102,41 @@ body.modal-open {
 					height: 100%;
 				}
 			}
+			&#dummy-modal {
+				max-width: 400px;
+
+				.dummy-modal__inner {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					min-height: 400px;
+					font-size: 3rem;
+					line-height: 1.4;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+			&.modal__form {
+				max-width: 320px;
+
+				.cont-form {
+					&__row {
+						margin-bottom: 16px;
+
+						&--btn {
+							margin-top: 24px;
+							flex-direction: column;
+	
+							.cont-form__btn {
+								margin-bottom: 16px;
+							}
+						}
+					}
+					&__input {
+						padding: 10px 22px;
+					}
+				}
+			}
 		}
 	}
 }

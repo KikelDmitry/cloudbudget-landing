@@ -9,9 +9,15 @@ document.addEventListener('click', function(event) {
 	//just example
 	if (target.closest('.top-burger__btn')) {
 		mobMenu();
+
 		return;
 	} else if (target.matches('.top-menu.is-active a.top-menu__link')) {
 		closeMenu();
+
+		return;
+	} else if (target.matches('.slider-cont__item')) {
+		fakeSlider();
+
 		return;
 	}
 	
@@ -47,15 +53,13 @@ function fakeSlider() {
 	let slide = slider.querySelector('.slider-cont__item');
 	slider.append(slide);
 }
-slider.onclick = fakeSlider;
 
 //blocking forms submit
 let forms = document.querySelectorAll('form');
 forms.forEach(function (form) {
 	form.onsubmit = function (e) {
 		e.preventDefault();
-		console.log('denied');
-
+		modalOpen('#dummy-modal');
 	}
 })
 

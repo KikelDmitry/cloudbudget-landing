@@ -1,6 +1,6 @@
 .features {
 	background: #fafafa;
-	
+
 	.featuressec {
 		min-height: 660px;
 	}
@@ -97,6 +97,11 @@
 				@include df(540) {
 					font-weight: bold;
 					font-size: 1.6rem;
+				}
+
+				&:focus {
+					outline: 0;
+					text-decoration: underline;
 				}
 			}
 		}

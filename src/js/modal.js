@@ -31,8 +31,9 @@ if (mLayer) {
 		if (currWin.id == 'modal-video' && !currWin.querySelector('.modal-video__wrap')) {
 			let embed = document.createElement('iframe');
 			embed.classList.add('modal-video__embed');
-			embed.src = 'https://www.youtube.com/embed/bIZsnKGV8TE';
+			embed.src = 'https://www.youtube.com/embed/5qap5aO4i9A';
 			embed.allowFullscreen = true;
+			embed.frameBorder = 0;
 			let embedWrap = document.createElement('div');
 			embedWrap.classList.add('modal-video__wrap');
 			currWin.append(embedWrap);

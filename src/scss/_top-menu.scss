@@ -63,7 +63,12 @@
 			transition: all 0.3s;
 		}
 
-		&:hover {
+		&:focus {
+
+		}
+
+		&:hover,
+		&:focus {
 			text-shadow: 0 0 1px currentColor;
 
 			&::after {
