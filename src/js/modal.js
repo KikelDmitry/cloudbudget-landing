@@ -20,6 +20,7 @@ if (mLayer) {
 		document.documentElement.classList.add('modal-open');
 		document.body.classList.add('modal-open');
 		mLayer.classList.add('is-visible');
+		
 		//if page has scroll
 		if (document.documentElement.clientHeight < document.body.clientHeight) {
 			document.body.classList.add('modal-open--w-scroll');

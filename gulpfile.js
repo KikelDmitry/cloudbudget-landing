@@ -14,7 +14,9 @@ let gulp = require('gulp'),
 
 	//CSS
 	sass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
+	postcss = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer'),
+	// autoprefixer = require('gulp-autoprefixer'),
 	csso = require('gulp-csso'),
 
 	//JS
@@ -64,10 +66,10 @@ gulp.task('css', function () {
 		.pipe(sass({
 			outputStyle: 'compressed'
 		})).on('error', sass.logError)
+		.pipe(postcss([
+			autoprefixer()
+		]))
 		.pipe(csso())
-		.pipe(autoprefixer({
-			cascade: false
-		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(`${dest}css`))
 		.pipe(browserSync.stream())
@@ -77,7 +79,7 @@ gulp.task('css', function () {
 
 // js files list in order
 let scriptsList = [
-	//  `${src}js/svg4everybody.js`,
+	 `${src}js/svg4everybody.js`,
 	 `${src}js/modal.js`,
 	 `${src}js/main.js`,
 ]

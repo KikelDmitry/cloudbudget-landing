@@ -23,7 +23,7 @@
 			font-weight: normal;
 		}
 		&__btn {
-			color: $pink;
+			color: darken($pink, 10%);
 			line-height: 2rem;
 
 			@include df(540) {

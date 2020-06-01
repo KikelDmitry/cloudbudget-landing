@@ -43,32 +43,68 @@
 					}
 				}
 			}
+			@include df(1024) {
+				padding-right: 20px;
+			}
+			@include df(890) {
+				padding-right: 0;
+				margin-bottom: 20px;
+			}
 		}
 		.slider-cont {
-			// display: none;
 			position: relative;
 			min-height: 320px;
+			min-width: 555px;
 			cursor: pointer;
 
-			&__item { //regular
+			$slide-dur: 0.4s;
+
+			&__item {
+				//regular
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				z-index: 2;
 				border-radius: 15px;
-				transform:  translate(-70%, -50%) scale(0.8);
-				transition: all 1s;
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+				transform: translate(-70%, -50%) scale(0.8);
+				transition: all $slide-dur;
 
-				&:first-child { //is-active
-					z-index: 3;
-					transform:  translate(-50%, -50%) scale(1);
-				}
-				
-				&:last-child {
-					z-index: 1;
+				&:first-child {
 					transform: translate(-30%, -50%) scale(0.8);
+
+					@include df(620) {
+						transform: translate(-50%, -50%) scale(0.8);
+					}
+				}
+
+				&:last-child {
+					transform: translate(-50%, -50%) scale(1);
+					animation: slide $slide-dur linear 1 forwards;
+
+					@include df(620) {
+						transform: translate(-50%, -50%) scale(0.8);
+					}
+				}
+				@keyframes slide {
+					0% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+				@include df(620) {
+					transform: translate(-50%, -50%) scale(0.8);
 				}
 			}
+			@include df(620) {
+				min-width: auto;
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+		@include df(890) {
+			flex-direction: column;
 		}
 	}
 }

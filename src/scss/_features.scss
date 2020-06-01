@@ -50,9 +50,6 @@
 				left: 28px;
 				right: 28px;
 				bottom: auto;
-				display: flex;
-				flex-flow: column;
-				align-items: center;
 				padding: 34px 34px 25px;
 				text-align: center;
 				background-color: $bg-color;
@@ -90,9 +87,10 @@
 				}
 			}
 			&__btn {
+				margin: 0 auto;
 				font-size: 1.2rem;
 				line-height: 1.8rem;
-				color: $pink;
+				color: darken($pink, 10%);
 
 				@include df(540) {
 					font-weight: bold;

@@ -1,4 +1,4 @@
-$font-path: '/fonts/';
+$font-path: '../fonts/';
 @font-face {
 	font-family: 'Lato';
 	src: url($font-path + 'latoregular.woff2') format('woff2'),

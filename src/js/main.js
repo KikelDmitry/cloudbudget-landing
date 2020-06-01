@@ -1,28 +1,3 @@
-//listeners list :0
-window.addEventListener('DOMContentLoaded', function () {
-	if (!!document.documentMode) {
-		svg4everybody();
-	}
-})
-document.addEventListener('click', function(event) {
-	let target = event.target;
-	//just example
-	if (target.closest('.top-burger__btn')) {
-		mobMenu();
-
-		return;
-	} else if (target.matches('.top-menu.is-active a.top-menu__link')) {
-		closeMenu();
-
-		return;
-	} else if (target.matches('.slider-cont__item')) {
-		fakeSlider();
-
-		return;
-	}
-	
-})
-
 //mobile menu
 let burger = document.querySelector('.top-burger__btn'),
 	menu = document.querySelector('.top-menu');
@@ -59,7 +34,30 @@ let forms = document.querySelectorAll('form');
 forms.forEach(function (form) {
 	form.onsubmit = function (e) {
 		e.preventDefault();
-		modalOpen('#dummy-modal');
 	}
 })
 
+//listeners
+window.addEventListener('DOMContentLoaded', function () {
+	if (!!document.documentMode) {
+		svg4everybody();
+	}
+})
+document.addEventListener('click', function (event) {
+	let target = event.target;
+	//just example
+	if (target.closest('.top-burger__btn')) {
+		mobMenu();
+
+		return;
+	} else if (target.matches('.top-menu.is-active a.top-menu__link')) {
+		closeMenu();
+
+		return;
+	} else if (target.matches('.slider-cont__item')) {
+		fakeSlider();
+
+		return;
+	}
+
+})
