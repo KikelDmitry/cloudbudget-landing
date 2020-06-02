@@ -16,7 +16,6 @@ let gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
-	// autoprefixer = require('gulp-autoprefixer'),
 	csso = require('gulp-csso'),
 
 	//JS
@@ -79,7 +78,6 @@ gulp.task('css', function () {
 
 // js files list in order
 let scriptsList = [
-	 `${src}js/svg4everybody.js`,
 	 `${src}js/modal.js`,
 	 `${src}js/main.js`,
 ]
@@ -172,11 +170,20 @@ gulp.task('watch', function () {
 
 //MAINTAIN
 
+//clean
 gulp.task('clean', function () {
 	return del(`${dest}**`, { force: true })
+})
+//copy
+gulp.task('copy', function() {
+	let arr = [
+		`${src}favicon.ico`
+	]
+	return gulp.src(arr)
+		.pipe(gulp.dest(`${dest}`))
 })
 
 //DEV TASKS
 gulp.task('dev', gulp.parallel('pug', 'css', 'scripts', 'browser-sync', 'watch'));
 
-gulp.task('build', gulp.series(['clean', gulp.parallel('pug', 'css', 'scripts', 'svgsprite', 'imagemin', 'fonts')]));
+gulp.task('build', gulp.series(['clean', gulp.parallel('pug', 'css', 'scripts', 'svgsprite', 'imagemin', 'fonts', 'copy')]));

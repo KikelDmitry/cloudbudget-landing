@@ -45,5 +45,6 @@
   "bugs": {
     "url": "https://github.com/KikelDmitry/cloudbudget-landing/issues"
   },
-  "homepage": "https://github.com/KikelDmitry/cloudbudget-landing#readme"
+  "homepage": "https://github.com/KikelDmitry/cloudbudget-landing#readme",
+  "dependencies": {}
 }
