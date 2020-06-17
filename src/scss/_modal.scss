@@ -63,6 +63,12 @@ body.modal-open {
 				padding: 0.5em 0.8em;
 			}
 
+			.modal__title {
+				margin-bottom: 1em;
+				text-align: center;
+				font-size: 2.8rem;
+			}
+
 			&.is-active {
 				display: block;
 			}
