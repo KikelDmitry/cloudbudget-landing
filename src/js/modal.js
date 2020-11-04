@@ -20,7 +20,7 @@ if (mLayer) {
 		document.documentElement.classList.add('modal-open');
 		document.body.classList.add('modal-open');
 		mLayer.classList.add('is-visible');
-		
+
 		//if page has scroll
 		if (document.documentElement.clientHeight < document.body.clientHeight) {
 			document.body.classList.add('modal-open--w-scroll');
@@ -39,7 +39,7 @@ if (mLayer) {
 			embedWrap.classList.add('modal-video__wrap');
 			currWin.append(embedWrap);
 			embedWrap.append(embed);
-			
+
 		}
 
 	}
@@ -60,8 +60,7 @@ if (mLayer) {
 		} else {
 			if (!!e.target.dataset.modal) {
 				modalClose(); //close all firstly
-				let dataModal = e.target.dataset.modal;
-				modalOpen(dataModal);
+				modalOpen(e.target.dataset.modal);
 			}
 		}
 	})

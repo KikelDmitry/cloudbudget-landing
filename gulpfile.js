@@ -78,8 +78,8 @@ gulp.task('css', function () {
 
 // js files list in order
 let scriptsList = [
-	 `${src}js/modal.js`,
-	 `${src}js/main.js`,
+	`${src}js/modal.js`,
+	`${src}js/main.js`,
 ]
 
 gulp.task('scripts', function () {
@@ -175,7 +175,7 @@ gulp.task('clean', function () {
 	return del(`${dest}**`, { force: true })
 })
 //copy
-gulp.task('copy', function() {
+gulp.task('copy', function () {
 	let arr = [
 		`${src}favicon.ico`
 	]
